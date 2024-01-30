@@ -1,21 +1,26 @@
 import React from "react";
-import { useInView } from 'react-intersection-observer';
+import { useInView } from "react-intersection-observer";
 import "../Styles/project.scss";
 import Button from "react-bootstrap/Button";
-import gitlogo from "../Assets/github-logo.png"
-import link from "../Assets/link.png"
+import gitlogo from "../Assets/github-logo.png";
+import link from "../Assets/link.png";
 
 function Project(props) {
     const ticons = props.icons;
     const { ref, inView } = useInView();
 
-
     return (
         <div className="project-outer">
             <div className="project" ref={ref}>
-                <a href={props.link} className="project-link">
-                    <img className={inView === true ? "project-image-active" : "project-image"} src={props.image} />
+                <a href={props.link} className="project-link-desktop">
+                    <img
+                        className={
+                            inView === true ? "project-image-active" : "project-image"
+                        }
+                        src={props.image}
+                    />
                 </a>
+
                 <div className="project-info">
                     <h1>{props.title}</h1>
                     <div className="tech-icon-container">
@@ -27,6 +32,14 @@ function Project(props) {
                             ))}
                         </div>
                     </div>
+                    <a href={props.link} className="project-link-mobile">
+                        <img
+                            className={
+                                inView === true ? "project-image-active" : "project-image"
+                            }
+                            src={props.image}
+                        />
+                    </a>
                     <p>{props.summary}</p>
 
                     <div className="link-container">
@@ -46,11 +59,6 @@ function Project(props) {
                             <img className="tech-icon" src={link} alt="tech-icon" />
                             Live Link
                         </Button>
-
-
-
-
-
                     </div>
                 </div>
             </div>

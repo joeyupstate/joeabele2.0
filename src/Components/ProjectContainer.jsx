@@ -11,14 +11,16 @@ import csslogo from "../Assets/csslogo.png";
 import sasslogo from "../Assets/sasslogo.png";
 import htmllogo from "../Assets/htmllogo.png"
 import Data from "../Data.js"
+import { forwardRef } from "react";
 
 
 
-function ProjectContainer({ projectRef }) {
+
+const ProjectContainer = forwardRef((props, ref) => {
 
     return (
 
-        <div className="project-container" ref={projectRef}  >
+        <div className="project-container" ref={ref}  >
 
             <Project title="Palmfinder"
                 image={Palmfinderimg}
@@ -67,6 +69,6 @@ function ProjectContainer({ projectRef }) {
 
         </div>
     );
-}
+});
 
 export default ProjectContainer;
