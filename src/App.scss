@@ -1,0 +1,70 @@
+@import "./Styles/default_styles.scss";
+
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 0;
+  align-items: center;
+  justify-content: flex-end;
+}
+.navbar {
+  a {
+    color: white;
+
+    @include mediumbreakpoint {
+      color: $secondary-color;
+    }
+    // position: relative;
+    &:hover {
+      color: $dark-color;
+      font-weight: bold;
+      // &:after {
+      //   content: "";
+      //   // animation-duration: 0.5s;
+      //   // animation-name: testSlide;
+      //   position: absolute;
+      //   bottom: 6px;
+      //   border-radius: 25px;
+      //   left: 8px;
+      //   height: 2.5px;
+      //   width: 50px;
+      //   background-color: $secondary-color;
+      // }
+    }
+  }
+}
+
+.navbar-expand-lg {
+  background-color: $secondary-color !important;
+  @include flex-center-row;
+  @include smediumbreakpoint {
+    @include flex-center-row;
+  }
+
+  .container {
+    @include smediumbreakpoint {
+      max-width: 280px;
+      margin: 0 auto;
+      background-color: $light-color;
+      border-radius: $border-radius;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+.app {
+  background-color: white;
+  font-family: $base-font;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+.navbar-toggler-icon {
+  background-image: url("./Assets/hamburger.png");
+}

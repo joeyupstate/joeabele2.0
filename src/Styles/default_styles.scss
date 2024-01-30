@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap");
+
+//fonts
+
+$base-font: "Sarabun", sans-serif;
+
+//colors
+$primary-color: white;
+$secondary-color: #0d1b2a;
+$secondary-light-color: #415a77;
+$dark-color: black;
+$light-color: #e0e1dd;
+
+//////////////////random
+$border-radius: 25px;
+
+////////////////////////breakpoints
+$xsmall: 450px;
+$small: 768px;
+$smedium: 992px;
+$medium: 1028px;
+$large: 1280px;
+
+@mixin xsmallbreakpoint {
+  @media only screen and (min-width: $xsmall) {
+    @content;
+  }
+}
+@mixin smallbreakpoint {
+  @media only screen and (min-width: $small) {
+    @content;
+  }
+}
+@mixin smediumbreakpoint {
+  @media only screen and (min-width: $smedium) {
+    @content;
+  }
+}
+@mixin mediumbreakpoint {
+  @media only screen and (min-width: $medium) {
+    @content;
+  }
+}
+@mixin largereakpoint {
+  @media only screen and (min-width: $large) {
+    @content;
+  }
+}
+
+///////////////////////////flexbox mixins
+@mixin flex-center-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@mixin flex-center-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+///////////////////////////////style mixins
+@mixin ghost {
+  background-color: $secondary-light-color;
+  color: white;
+  border: 2px solid $secondary-light-color;
+
+  &:hover {
+    background-color: transparent;
+    cursor: pointer;
+    color: $secondary-light-color;
+  }
+}

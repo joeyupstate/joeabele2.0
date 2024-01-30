@@ -1,0 +1,209 @@
+@import "./default_styles.scss";
+
+/* title */
+.title-container {
+  background-color: $secondary-color;
+  height: 70vh;
+}
+
+.heading {
+  color: white;
+  font-weight: 700;
+}
+
+.sub-heading {
+  color: $secondary-light-color;
+}
+
+.view-work-button {
+  padding: 12px 32px;
+  margin-top: 50px;
+  border-radius: $border-radius;
+  font-weight: 700;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    color: $dark-color;
+    background-color: white;
+  }
+}
+
+/*projects */
+.project-container {
+  @include flex-center-column;
+}
+
+.project-outer {
+  @include flex-center-column;
+  margin-top: 200px;
+  width: 80%;
+  background-color: $light-color;
+  border-radius: $border-radius;
+  overflow: hidden;
+  max-width: 900px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+  @include mediumbreakpoint {
+    height: 375px;
+    width: 80%;
+  }
+
+  .project {
+    @include flex-center-column;
+    flex-direction: column-reverse;
+    width: 95%;
+
+    @include smediumbreakpoint {
+      @include flex-center-row;
+    }
+  }
+
+  .tech-icon-container {
+    @include flex-center-column;
+
+    h4 {
+      font-size: 14px;
+      color: $dark-color;
+      font-weight: bold;
+    }
+
+    .icon-image-container {
+      @include flex-center-row;
+
+      .tech-icon {
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+
+  .project-link {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 100%;
+
+    @include smediumbreakpoint {
+      margin-bottom: 0px;
+      margin-top: 0px;
+      margin-left: -100px;
+      margin-bottom: -50px;
+      border-radius: $border-radius;
+      transform: scale(0.9);
+      transform: rotate(-4deg);
+    }
+  }
+
+  .project-image-active {
+    width: 100%;
+    height: 100%;
+
+    @include smediumbreakpoint {
+      margin-bottom: 0px;
+      margin-top: 0px;
+      margin-left: 0px;
+      margin-bottom: -50px;
+      border-radius: $border-radius;
+      transform: scale(0.9);
+      transform: rotate(0deg);
+      animation-name: move-image;
+      animation-duration: 0.5s;
+    }
+  }
+
+  @keyframes move-image {
+    0% {
+      transform: rotate(-4deg);
+    }
+
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
+  .project-info {
+    width: 90%;
+    height: 100%;
+    padding: 20px;
+    @include flex-center-column;
+
+    @include smediumbreakpoint {
+      width: 50%;
+      padding: 12px;
+    }
+
+    h1 {
+      font-size: 1.3rem;
+      font-family: $base-font;
+      font-weight: 700;
+      color: $secondary-light-color;
+      @include xsmallbreakpoint {
+        font-size: 1.75rem;
+      }
+    }
+
+    p {
+      text-align: center;
+      font-size: 15px;
+    }
+  }
+
+  .link-container {
+    @include flex-center-row;
+
+    .tech-icon {
+      height: 30px;
+      width: 30px;
+      padding: 5px;
+
+      fill: red;
+    }
+  }
+
+  .link-button {
+    margin: 10px;
+    width: 140px;
+    border-radius: $border-radius;
+    @include flex-center-row;
+    @include ghost;
+    position: relative;
+
+    &:hover {
+      img {
+        opacity: 0;
+      }
+
+      &:nth-child(1) {
+        &:after {
+          content: url("../Assets/github-logo-blue.png");
+          position: absolute;
+          height: 30px;
+          width: 30px;
+          bottom: 15px;
+          left: 8px;
+          transform: scale(0.04);
+        }
+      }
+
+      &:nth-child(2) {
+        &:after {
+          content: url("../Assets/link-blue.png");
+          position: absolute;
+          height: 30px;
+          width: 30px;
+          bottom: 16px;
+          left: 14px;
+          transform: scale(0.04);
+        }
+      }
+    }
+  }
+}
