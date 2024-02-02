@@ -21,7 +21,7 @@ const ProjectContainer = forwardRef((props, ref) => {
     return (
 
         <div className="project-container" ref={ref}  >
-
+            <h2>My Projects</h2>
             <Project title="Palmfinder"
                 image={Palmfinderimg}
                 summary={Data[0].summaries[0].palmSummary}
@@ -68,6 +68,7 @@ const ProjectContainer = forwardRef((props, ref) => {
 
 
         </div>
+
     );
 });
 

@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import "../Styles/components.scss"
-
+import Resume from "../"
 
 
 import React, { forwardRef, useRef } from "react";
@@ -23,7 +23,8 @@ const NavMenu = ({ resultRef }) => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="#home" onClick={clickHandler}>Projects</Nav.Link>
-                        <Nav.Link href="#link">Resume</Nav.Link>
+                        <Nav.Link href={require("../Resume.pdf")} target="_blank">Resume</Nav.Link>
+                        <Nav.Link href="" target="_blank">Skills</Nav.Link>
                         <Nav.Link href="#link">Contact</Nav.Link>
 
 

@@ -1,0 +1,37 @@
+@import "./default_styles.scss";
+.skills-container {
+  margin-top: 100px;
+  @include flex-center-column;
+}
+.skills-icon-container {
+  min-width: 320px;
+  margin-top: 50px;
+  @include xsmallbreakpoint {
+    @include flex-center-row;
+    flex-wrap: wrap;
+    max-width: 65%;
+    margin-top: 20px;
+  }
+
+  .skill-box {
+    @include flex-center-column;
+
+    width: 80px;
+    margin: 10px;
+    .tech-icon {
+      height: 70px;
+      width: 70px;
+      transition: 0.25s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+// <div className='skills-container'>
+// <h2>My Skills</h2>
+// <div className='skill-icon-container'>
+//     {icons.map((i) => {
+//         <div className='skill-box'>
+//             <img className='tech-icon' src={i.icon} />
+//             <p>{i.name}</p>

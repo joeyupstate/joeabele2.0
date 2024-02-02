@@ -9,11 +9,11 @@
 .navbar {
   a {
     color: white !important;
-
     @include mediumbreakpoint {
       color: $secondary-color !important;
+      padding: 12px 32px;
     }
-    // position: relative;
+
     &:hover {
       color: $dark-color;
       font-weight: bold;
@@ -30,7 +30,7 @@
 
   .container {
     @include smediumbreakpoint {
-      max-width: 280px;
+      max-width: 320px;
       margin: 0 auto;
       background-color: $light-color;
       border-radius: $border-radius;
@@ -49,7 +49,6 @@
   .navbar-toggler-icon {
     position: relative;
     display: block;
-
     background-image: url("./Assets/hamburger.png") !important;
   }
 }

@@ -34,11 +34,15 @@
 /*projects */
 .project-container {
   @include flex-center-column;
+  margin-top: 100px;
+
+  h2 {
+    margin-bottom: 25px;
+  }
 }
 
 .project-outer {
   @include flex-center-column;
-  margin-top: 200px;
   width: 80%;
   background-color: $light-color;
   border-radius: $border-radius;
@@ -46,12 +50,14 @@
   max-width: 900px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-
   @include mediumbreakpoint {
     height: 375px;
     width: 80%;
   }
 
+  &:not(:nth-of-type(1)) {
+    margin-top: 145px;
+  }
   .project {
     @include flex-center-column;
     flex-direction: column-reverse;
@@ -133,6 +139,8 @@
       transform: rotate(0deg);
       animation-name: move-image;
       animation-duration: 0.5s;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     }
   }
 
