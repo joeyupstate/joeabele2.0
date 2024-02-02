@@ -6,6 +6,7 @@
 .skills-icon-container {
   min-width: 320px;
   margin-top: 50px;
+  @include flex-center-column;
   @include xsmallbreakpoint {
     @include flex-center-row;
     flex-wrap: wrap;
@@ -19,8 +20,12 @@
     width: 80px;
     margin: 10px;
     .tech-icon {
-      height: 70px;
-      width: 70px;
+      height: 100px;
+      width: 100px;
+      @include xsmallbreakpoint {
+        height: 70px;
+        width: 70px;
+      }
       transition: 0.25s;
       &:hover {
         transform: scale(1.1);

@@ -9,7 +9,7 @@
 .navbar {
   a {
     color: white !important;
-    @include mediumbreakpoint {
+    @include smediumbreakpoint {
       color: $secondary-color !important;
       padding: 12px 32px;
     }
@@ -22,13 +22,14 @@
 }
 
 .navbar-expand-lg {
-  background-color: $secondary-color !important;
+  @include background-pattern;
   @include flex-center-row;
   @include smediumbreakpoint {
     @include flex-center-row;
   }
 
   .container {
+    max-width: 100%;
     @include smediumbreakpoint {
       max-width: 320px;
       margin: 0 auto;

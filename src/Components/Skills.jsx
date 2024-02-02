@@ -12,10 +12,11 @@ import angularlogo from "../Assets/angular.svg";
 import drupallogo from "../Assets/drupal-5.svg";
 import wordpresslogo from "../Assets/wordpress-icon-1.svg";
 import "../Styles/skills.scss";
+import { forwardRef } from "react";
 
 
 
-function Skills() {
+const Skills = forwardRef((props, ref) => {
     const icons =
         [{ icon: htmllogo, name: "html" },
         { icon: csslogo, name: "CSS" },
@@ -32,7 +33,7 @@ function Skills() {
         ];
 
     return (
-        <div className='skills-container'>
+        <div className='skills-container' ref={ref}>
             <h2>My Skills</h2>
             <div className='skills-icon-container'>
                 {icons.map((icon) => (
@@ -44,6 +45,6 @@ function Skills() {
             </div>
         </div>
     )
-}
+});
 
 export default Skills

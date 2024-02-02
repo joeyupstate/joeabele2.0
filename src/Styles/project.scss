@@ -4,31 +4,22 @@
 .title-container {
   background-color: $secondary-color;
   height: 70vh;
+  @include background-pattern;
 }
 
 .heading {
-  color: white;
+  color: $primary-color;
   font-weight: 700;
 }
 
 .sub-heading {
-  color: $secondary-light-color;
+  color: $primary-color;
 }
 
 .view-work-button {
   padding: 12px 32px;
   margin-top: 50px;
-  border-radius: $border-radius;
-  font-weight: 700;
-  border: 2px solid white;
-  background-color: transparent;
-  color: white;
-  cursor: pointer;
-
-  &:hover {
-    color: $dark-color;
-    background-color: white;
-  }
+  @include dark-bg-ghost;
 }
 
 /*projects */
